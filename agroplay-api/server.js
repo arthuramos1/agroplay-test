@@ -17,7 +17,7 @@ app.get("/events", async (_, res) => {
   res.status(200).json(events);
 });
 
-// private route get events
+// private route get event
 app.get("/events-auth", getToken, async (_, res) => {
   const events = await prisma.event.findMany();
   res.status(200).json(events);
